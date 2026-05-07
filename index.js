@@ -1,3 +1,4 @@
+require('./tracer');
 const express = require('express');
 const app = express();
 
