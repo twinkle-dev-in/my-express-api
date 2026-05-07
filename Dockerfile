@@ -7,12 +7,13 @@ RUN npm ci --only=production
 
 COPY . .
 
-# Datadog will pick these up automatically
-ENV DD_SERVICE=your-service-name
+ENV DD_SERVICE=my-express-api
 ENV DD_ENV=production
 ENV DD_LOGS_INJECTION=true
 ENV DD_RUNTIME_METRICS_ENABLED=true
 ENV DD_PROFILING_ENABLED=true
+ENV DD_TRACE_AGENTLESS=true
+ENV DD_SITE=datadoghq.com
 
 EXPOSE 3000
 CMD ["node", "index.js"]
